@@ -26,6 +26,8 @@
      // attachEvent()
     // jQuery - on
 
+    //to study more about events
+
     // type, timestamp, defaultPrevented
     // target, toElement, srcElement, currentTarget,
     // clientX, clientY, screenX, screenY
@@ -39,7 +41,7 @@
 
     // document.getElementById('owl').addEventListener('click', function(e){
     //     console.log("owl clicked");
-    //     e.stopPropagation()
+    //     e.stopPropagation() ---> to stop the event bubbling and capturing
     // }, false)
     
     // document.getElementById('google').addEventListener('click',function(e){
@@ -53,13 +55,14 @@
         console.log(e.target.tagName);
         if (e.target.tagName === 'IMG') {
             console.log(e.target.id);
-            let removeIt = e.target.parentNode
+            let removeIt = e.target.parentNode//give the parent node of the image which is li
             removeIt.remove()
         }
+        
     
         
     })
-    
-    //removeIt.parentNode.removeChild(removeIt)
+    //second way to remove the image
+    //removeIt.parentNode.removeChild(removeIt)--> going to the parent node of the li and then remove the li
 </script>
 </html>
