@@ -53,6 +53,9 @@
 
     </script>
     <script>
+        
+        //it will also work (but reductant code)--> so try to write common function
+
         // document.getElementById("orange").onclick = function(){
         //     document.body.style.backgroundColor = `orange`
         // }
@@ -60,17 +63,34 @@
         //     document.body.style.backgroundColor = `green`
         // }
 
+        //here we decalre the function and store it in onclick property of button
+        //here function is stored in onclick property of button and called when button is clicked
+        //so onlclick work
+        
+        //sp try by function
+        //onlcick need function  as return value( is used another function)
         function clickHandler(color){
-            // document.body.style.backgroundColor = `${color}`
+            // console.log('hello'); // to check will this function is called or not
+            
+            //document.body.style.backgroundColor = `${color}`
+
+            //The issue in the code is that the clickHandler function is being called immediately when the script runs
+            //This is because the parentheses () after clickHandler("orange") and clickHandler("green") cause the function to execute immediately,
+            // and the return value (which is undefined in this case) is assigned as the event handler
 
             return function(){
                 document.body.style.backgroundColor = `${color}`
+                //uses lexical scope of clickHandler function as color is not defined in this function
             }
         }
-        //onclick need function call not function re
+        //onclick need function call not function referece
+        
 
         document.getElementById('orange').onclick = clickHandler("orange")
+        //when we do not  return function from clickHandler then undefined is stored in onclick property of button
         document.getElementById('green').onclick = clickHandler("green")
-//
+
+        //now The clickHandler function now returns another function that changes the background color. This returned function will be executed when the button is clicked.
+        
     </script>
 </html>
