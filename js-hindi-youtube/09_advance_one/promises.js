@@ -10,7 +10,8 @@ const promiseOne = new Promise(function(resolve, reject){
 promiseOne.then(function(){
     console.log("Promise consumed");
 })
-
+//if resovle is exceuted then we can use then method to consume the promise
+//if reject is executed then we can use catch method to consume the promise
 new Promise(function(resolve, reject){
     setTimeout(function(){
         console.log("Async task 2");
@@ -33,24 +34,49 @@ promiseThree.then(function(user){
 
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true
+        let error = false
         if (!error) {
             resolve({username: "hitesh", password: "123"})
         } else {
             reject('ERROR: Something went wrong')
         }
     }, 1000)
-})
+});
 
  promiseFour
  .then((user) => {
-    console.log(user);
+    console.log(user.username);
     return user.username
 }).then((username) => {
     console.log(username);
 }).catch(function(error){
     console.log(error);
 }).finally(() => console.log("The promise is either resolved or rejected"))
+
+//async await code for promiseFour
+
+// async function handlePromise() {
+//     try {
+//         const user = await promiseFour;
+//         const username = await user.username; // here we canot use await because user.username is not a promise(using it not problem like then)
+//         console.log(username);
+//     } catch (error) {
+//         console.log(error);
+//     } finally {
+//         console.log("The promise is either resolved or rejected");
+//     }
+// }
+
+// handlePromise();
+
+/* end here */
+
+//we can do chaining here
+//2nd then will have the value returned by the first then
+
+//catch is present when promise is rejected then catch will be executed
+//finally will be executed in both cases
+
 
 
 
@@ -64,7 +90,13 @@ const promiseFive = new Promise(function(resolve, reject){
         }
     }, 1000)
 });
+//in async we use try catch
+// await is like then
+//await will execute when promise is resolved
+//if error occur in promise then catch will be executed
 
+//await means wait for the promise to be resolved
+//if await used for sync code then no problem as it doen have to wait sync code will be excueted instantly
 async function consumePromiseFive(){
     try {
         const response = await promiseFive
@@ -80,7 +112,8 @@ consumePromiseFive()
 //     try {
 //         const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
-//         const data = await response.json()
+//         const data = await response.json()  //were use again await because response.json() is also a promise
+               //in down code we use then two times so use await two times
 //         console.log(data);
 //     } catch (error) {
 //         console.log("E: ", error);
@@ -89,9 +122,11 @@ consumePromiseFive()
 
 //getAllUsers()
 
+//fetch is also a promise
+
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) => {
-    return response.json()
+    return response.json() //.json() is also a promise so we have to use 
 })
 .then((data) => {
     console.log(data);

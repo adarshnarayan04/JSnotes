@@ -13,16 +13,22 @@ function createUser(username, score){
     this.username = username
     this.score = score
 }
+//create a methiod inside the prototype of createUser
+//as very thing is object in js so we can add method in prototype
 
 createUser.prototype.increment = function(){
-    this.score++
+    this.score++//should write this as it will refer to the object in which we want to increment the score
 }
 createUser.prototype.printMe = function(){
     console.log(`price is ${this.score}`);
 }
 
+//should use new keyword to create a object if want to use prototype
 const chai = new createUser("chai", 25)
-const tea = createUser("tea", 250)
+const tea = createUser("tea", 250)//-->can not access the prototype method in this object ans new keyword is not used
+
+//no need to write chai.prototype.printMe() as js automatiicalluy go inside the prototype
+//as we know all the func of array such as map filter are in prototype of array we dont use .prototype to access them
 
 chai.printMe()
 

@@ -18,6 +18,12 @@
             document
                 .querySelector('button')
                 .addEventListener('click', this.handleClick.bind(this))
+                //we don't want to immediately call the function so  use bind it with this
+                // we when we call the function it will be called with the context of the class
+
+                //if use call we will get output before the button is clicked as it immediately calls the function
+                //but we want to call the function when the button is clicked so we use bind
+
 
         }
         handleClick(){

@@ -19,7 +19,9 @@ const user = {
 
 
 function User(username, loginCount, isLoggedIn){
-    this.username = username;
+    // here this is { } as it is node adn we are inside a function
+    //if we inside the object method then this will be the object
+     this.username = username;
     this.loginCount = loginCount;
     this.isLoggedIn = isLoggedIn
 
@@ -31,7 +33,17 @@ function User(username, loginCount, isLoggedIn){
     return this
 }
 
+
 const userOne = new User("hitesh", 12, true)
 const userTwo = new User("ChaiAurCode", 11, false)
+
+//if dont use new keyword then useone value will be override by userTwo
+
+//new keyword
+// 1st it create a empty object
+// 2nd constructor function is called 
+// 3rd value is get injected in this 
+// 4th return this 
+
 console.log(userOne.constructor);
 //console.log(userTwo);

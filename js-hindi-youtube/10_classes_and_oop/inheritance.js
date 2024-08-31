@@ -8,9 +8,9 @@ class User {
     }
 }
 
-class Teacher extends User{
+class Teacher extends User{//inheritance
     constructor(username, email, password){
-        super(username)
+        super(username)//for parent class constructor
         this.email = email
         this.password = password
     }
@@ -19,7 +19,7 @@ class Teacher extends User{
         console.log(`A new course was added by ${this.username}`);
     }
 }
-
+//should use new keyword to create object
 const chai = new Teacher("chai", "chai@teacher.com", "123")
 
 chai.logMe()
@@ -27,4 +27,5 @@ const masalaChai = new User("masalaChai")
 
 masalaChai.logMe()
 
-console.log(chai instanceof User);
+console.log(chai instanceof User);//true(as parent)
+console.log(chai instanceof Teacher);//true

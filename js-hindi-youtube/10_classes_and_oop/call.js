@@ -6,7 +6,10 @@ function SetUsername(username){
 
 function createUser(username, email, password){
     SetUsername.call(this, username)
-   
+   //SetUsername.(username) will be called but it will set this value in its execution context
+   // after the function is executed the this value will be lost as execution context is destroyed
+   //by call we pass the this value of createUser to setUsername
+   // now it set value in createUser object
     this.email = email
     this.password = password
 }

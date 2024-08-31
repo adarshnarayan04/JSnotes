@@ -25,11 +25,11 @@
     //     console.log("OUTER", secret);
     //     function inner(){
     //         let secret = "my123"
-    //         console.log("inner", username);
+    //         console.log("inner", username);//inner function can access outer function variable ( lexical scoping)
     //     }
     //     function innerTwo(){
     //         console.log("innerTwo", username);
-    //         console.log(secret);
+    //         console.log(secret); // two inner function can't access each other variable
     //     }
     //     inner()
     //     innerTwo()
@@ -44,10 +44,11 @@
     //     function displayName() {
     //         console.log(name);
     //     }
-    //     return displayName;
+    //     return displayName; //will return the lexical scope of fucntion along with( so that it can access name value when it is called )
+                                // if return the function only then it will not have access to name variable and give error when called
     // }
 
-    // const myFunc = makeFunc();
+    // const myFunc = makeFunc();//myFunc is now displayName function having lexical scope of makeFunc
     // myFunc();
 
     </script>
@@ -66,6 +67,7 @@
                 document.body.style.backgroundColor = `${color}`
             }
         }
+        //onclick need function call not function reference
 
         document.getElementById('orange').onclick = clickHandler("orange")
         document.getElementById('green').onclick = clickHandler("green")

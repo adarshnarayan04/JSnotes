@@ -11,8 +11,10 @@ class User {
         return `123`
     }
 }
-
+//console.log(User.createId()); //will work as static method can be called on class( it does not require object to run)
+//static method are part of class not object so object cannot access it
 const hitesh = new User("hitesh")
+
 // console.log(hitesh.createId())
 
 class Teacher extends User {
@@ -23,4 +25,4 @@ class Teacher extends User {
 }
 
 const iphone = new Teacher("iphone", "i@phone.com")
-console.log(iphone.createId());
+console.log(iphone.createId());// not work

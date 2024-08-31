@@ -12,5 +12,5 @@ const User = {
     }
 }
 
-const tea = Object.create(User)
+const tea = Object.create(User)//creating an object from User
 console.log(tea.email);
