@@ -15,7 +15,7 @@ const programming = ["js", "rb", "py", "java", "cpp"]
 //for in loop
 // here it store the key
 for (const key in programming) {
-    //console.log(programming[key]);  ---> as key store the key of array(index) as it for in loop so key value get assigned
+   // console.log(programming[key]); // ---> as key in loop store the key of array(index) so we can use it to get the value by programming[key]
 }
 
 // const map = new Map()
@@ -24,7 +24,7 @@ for (const key in programming) {
 // map.set('Fr', "France")
 // map.set('IN', "India")
 
-// nothing printed as map (cannot use to iterate in map)
+// //nothing printed as map (cannot use to iterate in map)
 
 // for (const key in map) { 
 //     console.log(key);

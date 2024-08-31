@@ -14,11 +14,13 @@
 </body>
 <script>
     const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();//old way to make api request now we use fetch api
     xhr.open('GET', requestUrl)
-    xhr.onreadystatechange = function(){
+    xhr.onreadystatechange = function(){//run when state changes(1-2,2-3,3-4)
         console.log(xhr.readyState);
         if (xhr.readyState === 4) {
+            //use this.responseText to get data from the api
+            //type of this.responseText is string so convert it to json
             const data = JSON.parse(this.responseText)
             console.log(typeof data);
             console.log(data.followers);
