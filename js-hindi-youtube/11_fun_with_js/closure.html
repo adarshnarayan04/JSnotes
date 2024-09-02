@@ -68,7 +68,7 @@
         //so onlclick work
         
         //sp try by function
-        //onlcick need function  as return value( is used another function)
+        //onlcick need or refernce of function or function as return value 
         function clickHandler(color){
             // console.log('hello'); // to check will this function is called or not
             
@@ -76,7 +76,7 @@
 
             //The issue in the code is that the clickHandler function is being called immediately when the script runs
             //This is because the parentheses () after clickHandler("orange") and clickHandler("green") cause the function to execute immediately,
-            // and the return value (which is undefined in this case) is assigned as the event handler
+            // and the return value (which is undefined in this case) is assigned to the onclick 
 
             return function(){
                 document.body.style.backgroundColor = `${color}`
@@ -87,6 +87,10 @@
         
 
         document.getElementById('orange').onclick = clickHandler("orange")
+        // document.getElementById('orange').onclick=( ()=> document.body.style.backgroundColor = `orange` ) //this will also work as this function is stored in onclick property of button
+        //here we dont call the functtion so problem if return 
+        // we just store the function in onclick property of button
+
         //when we do not  return function from clickHandler then undefined is stored in onclick property of button
         document.getElementById('green').onclick = clickHandler("green")
 
@@ -94,3 +98,14 @@
         
     </script>
 </html>
+
+<!-- using function reference in onclick property -->
+ 
+ <!-- here we store the function reference in onclick property of button
+ but problem is that can not pass the parameter to function is use function reference -->
+
+<!-- function handleClick() {
+    alert('Button clicked!');
+}
+
+document.getElementById('myButton').onclick = handleClick; -->
