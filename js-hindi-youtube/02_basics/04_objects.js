@@ -85,9 +85,39 @@ console.log(instructor);
 // objectName.propertyName
 // objectName["propertyName"]
 
-[
-    {},
-    {},
-    {}
-]
+// [
+//     {},
+//     {},
+//     {}
+// ]
+const myObj={};
+str = "myString";
+myObj[str] = "This key is in variable str";
+
+console.log(myObj.str); // undefined
+
+console.log(myObj[str]); // 'This key is in variable str'
+myObj[str]=myObj["myString"]
+
+//use [] to acces the object using variable(without " ")
+
+console.log(myObj.myString); // 'This key is in variable str'
+
+
+//in js "name" and name are same 
+//it last name value is stored as it override the previous value
+const obj={
+    name: "hitesh",
+    "name":"adarsh"
+    
+}
+const hobj={
+    "name":"adarsh",
+    name: "hitesh"
+    
+    
+}
+
+console.log(obj);
+console.log(hobj);
 
