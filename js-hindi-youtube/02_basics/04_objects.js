@@ -1,4 +1,7 @@
 // const tinderUser = new Object()
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects
+//read it for clear understanding
 const tinderUser = {}
 
 tinderUser.id = "123abc"
@@ -73,6 +76,14 @@ console.log(instructor);
 //     "coursename": "js in hindi",
 //     "price": "free"
 // }
+
+//obj.name or obj["name"]
+//obj[name] not work
+
+// you can access object properties in two ways:
+
+// objectName.propertyName
+// objectName["propertyName"]
 
 [
     {},
