@@ -108,7 +108,9 @@ console.log(myObj.myString); // 'This key is in variable str'
 //it last name value is stored as it override the previous value
 const obj={
     name: "hitesh",
-    "name":"adarsh"
+    "name":"adarsh",
+    age:20,
+    "gender":"male"
     
 }
 const hobj={
@@ -120,4 +122,7 @@ const hobj={
 
 console.log(obj);
 console.log(hobj);
+
+console.log(Object.keys(obj));//return all the keys of the object in array
+
 
