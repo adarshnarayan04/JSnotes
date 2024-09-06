@@ -27,6 +27,8 @@ const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // console.log(newNums);
 
+//filter is used to get specific values from an array
+//map is used to iterate an array (like for each) and also return what you want
 
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
