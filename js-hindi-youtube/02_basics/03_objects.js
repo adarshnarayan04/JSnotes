@@ -36,3 +36,14 @@ JsUser.greetingTwo = function(){
 
 console.log(JsUser.greeting());
 console.log(JsUser.greetingTwo());
+
+const a='hello'
+const b='world'
+
+const obj={
+    a,
+    b
+}
+console.log(obj) // { a: 'hello', b: 'world' }
+
+//if we pass varible in obj then key will be variable name and value will be value of variable
