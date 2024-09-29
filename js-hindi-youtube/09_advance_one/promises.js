@@ -1,3 +1,8 @@
+//we wrtie async code inside promise
+
+//The await keyword is used in an async function to pause the execution of the function until a promise is resolved or rejected. 
+//It allows you to write asynchronous code in a synchronous-like manner, making it easier to read and maintain.
+
 const promiseOne = new Promise(function(resolve, reject){
     //Do an async task
     // DB calls, cryptography, network
@@ -99,7 +104,7 @@ const promiseFive = new Promise(function(resolve, reject){
 //if await used for sync code then no problem as it doen have to wait sync code will be excueted instantly
 async function consumePromiseFive(){
     try {
-        const response = await promiseFive
+        const response = await promiseFive//as it is a promise so we have to use await
         console.log(response);
     } catch (error) {
         console.log(error);
