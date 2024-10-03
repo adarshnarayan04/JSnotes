@@ -103,6 +103,7 @@ myObj[str]=myObj["myString"]
 
 console.log(myObj.myString); // 'This key is in variable str'
 
+// -----------imp-----------------
 
 //in js "name" and name are same 
 //it last name value is stored as it override the previous value
