@@ -78,12 +78,14 @@ console.log(instructor);
 // }
 
 //obj.name or obj["name"]
-//obj[name] not work
+//obj[name] not work --> [name] will search for the variable value which is undefined
+//so it become obj.undefined --> so not work
 
 // you can access object properties in two ways:
 
 // objectName.propertyName
-// objectName["propertyName"]
+// objectName["propertyName"] ---> here ["string"] --> it will not serach for the value as it know it is string not an variable
+//like string s=a (will serach for value of a and store it in s) but string s="a" (will store a in s)
 
 // [
 //     {},
@@ -126,4 +128,12 @@ console.log(hobj);
 
 console.log(Object.keys(obj));//return all the keys of the object in array
 
+const na="hello"
+const sqaure={
+    
+    [na]: "hitesh"
+ 
+}
 
+console.log(sqaure);//{hello: "hitesh"}
+//if write sqauare brackets then it will take the value of the variable as key
