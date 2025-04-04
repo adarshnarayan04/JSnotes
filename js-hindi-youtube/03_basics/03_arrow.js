@@ -28,13 +28,20 @@ const user = {
 // }
 
 const chai =  () => {
-    let username = "hitesh"
-    console.log(this);
+    let username = "hitesh";
+    //console.log(this);
 }
-
+console.log(chai)//chai is a function so we use chai()
+//[Function: chai]
 
 // chai()
 
+const test =  () => {
+    let a=1;
+    let b=2;
+    return a+b;
+}
+console.log(test)//test is a function so we use test() to call the function
 //if use { } mean uou stated the scope so have to use return statement
 
 // const addTwo = (num1, num2) => {
